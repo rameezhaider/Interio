@@ -39,20 +39,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.ar.core.Anchor;
-import com.google.ar.core.ArCoreApk;
-import com.google.ar.core.Camera;
-import com.google.ar.core.Config;
-import com.google.ar.core.Coordinates2d;
-import com.google.ar.core.Frame;
-import com.google.ar.core.HitResult;
-import com.google.ar.core.Plane;
-import com.google.ar.core.Point;
+import com.google.ar.core.*;
 import com.google.ar.core.Point.OrientationMode;
-import com.google.ar.core.PointCloud;
-import com.google.ar.core.Session;
-import com.google.ar.core.Trackable;
-import com.google.ar.core.TrackingState;
 import com.google.ar.core.examples.java.common.helpers.CameraPermissionHelper;
 import com.google.ar.core.examples.java.common.helpers.DepthSettings;
 import com.google.ar.core.examples.java.common.helpers.DisplayRotationHelper;
@@ -422,7 +410,18 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
                 }
                 // Get the current pose of an Anchor in world space. The Anchor pose is updated
                 // during calls to session.update() as ARCore refines its estimate of the world.
-                coloredAnchor.anchor.getPose().toMatrix(anchorMatrix, 0);
+                Pose anchorPose = coloredAnchor.anchor.getPose();
+                Pose cameraPose = frame.getCamera().getPose();
+
+                float dx = anchorPose.tx() - cameraPose.tx();
+                float dy = anchorPose.ty() - cameraPose.ty();
+                float dz = anchorPose.tz() - cameraPose.tz();
+
+                float distanceMeters = (float) Math.sqrt(dx * dx + dy * dy + dz * dz);
+                Log.d("Distance", "Distance from camera: " + distanceMeters + " metres");
+
+                anchorPose.toMatrix(anchorMatrix, 0);
+
                 //endregion
                 // Update and draw the model and its shadow.
                 virtualObject.updateModelMatrix(anchorMatrix, scaleFactor);
