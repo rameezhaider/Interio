@@ -424,14 +424,6 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
                 // Get the current pose of an Anchor in world space. The Anchor pose is updated
                 // during calls to session.update() as ARCore refines its estimate of the world.
                 Pose anchorPose = coloredAnchor.anchor.getPose();
-                Pose cameraPose = frame.getCamera().getPose();
-
-                float dx = anchorPose.tx() - cameraPose.tx();
-                float dy = anchorPose.ty() - cameraPose.ty();
-                float dz = anchorPose.tz() - cameraPose.tz();
-
-                float distanceMeters = (float) Math.sqrt(dx * dx + dy * dy + dz * dz);
-                runOnUiThread(() -> Toast.makeText(getApplicationContext(), "Distance Meters: " + distanceMeters, Toast.LENGTH_SHORT).show());
 
                 anchorPose.toMatrix(anchorMatrix, 0);
 
