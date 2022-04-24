@@ -64,9 +64,9 @@ public class SignUpActivity extends AppCompatActivity {
 
 
                 if (pwd.equals(pwdcheck)) {
-                    Log.d(TAG, "등록 버튼 " + email + " , " + pwd);
+                    Log.d(TAG, "Register button" + email + " , " + pwd);
                     final ProgressDialog mDialog = new ProgressDialog(SignUpActivity.this);
-                    mDialog.setMessage("가입중입니다...");
+                    mDialog.setMessage("Signing up...");
                     mDialog.show();
 
                     //파이어베이스에 신규계정 등록하기
@@ -99,7 +99,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
                                 startActivity(intent);
                                 finish();
-                                Toast.makeText(SignUpActivity.this, "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignUpActivity.this, "You have successfully registered as a member.", Toast.LENGTH_SHORT).show();
 
                             }
                             else if(!task.isSuccessful()) {
@@ -107,13 +107,13 @@ public class SignUpActivity extends AppCompatActivity {
                                 try {
                                     throw task.getException();
                                 } catch(FirebaseAuthWeakPasswordException e) {
-                                    Toast.makeText(SignUpActivity.this,"비밀번호가 너무 간단합니다." ,Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignUpActivity.this,"Your password is too simple." ,Toast.LENGTH_SHORT).show();
                                 } catch(FirebaseAuthInvalidCredentialsException e) {
-                                    Toast.makeText(SignUpActivity.this,"email 형식에 맞지 않습니다." ,Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignUpActivity.this,"It doesn't fit the email format." ,Toast.LENGTH_SHORT).show();
                                 } catch(FirebaseAuthUserCollisionException e) {
-                                    Toast.makeText(SignUpActivity.this,"이미존재하는 email 입니다." ,Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignUpActivity.this,"This email already exists." ,Toast.LENGTH_SHORT).show();
                                 } catch(Exception e) {
-                                    Toast.makeText(SignUpActivity.this,"다시 확인해주세요." ,Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignUpActivity.this,"Please check again." ,Toast.LENGTH_SHORT).show();
                                 }
                             }
                         }
@@ -122,7 +122,7 @@ public class SignUpActivity extends AppCompatActivity {
                     //비밀번호 오류시
                 } else {
 
-                    Toast.makeText(SignUpActivity.this, "비밀번호가 틀렸습니다. 다시 입력해 주세요.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUpActivity.this, "The password is wrong. Please re-enter.", Toast.LENGTH_SHORT).show();
                     return;
                 }
             }

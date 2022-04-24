@@ -1,6 +1,8 @@
 package com.google.ar.core.examples.java.helloar;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -43,12 +45,10 @@ public class LoginActivity extends AppCompatActivity {
         mRegistBtn.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                //intent함수를 통해 register액티비티 함수를 호출한다.
                 startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
             }
         });
 
-    //로그인 버튼이 눌리면
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -65,6 +65,8 @@ public class LoginActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
+                                        // save email in shared preference
+                                        saveEmailToSharedPreferences(ID.getText().toString());
                                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                         startActivity(intent);
                                         Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
@@ -90,5 +92,10 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
+    void saveEmailToSharedPreferences(String email) {
+        SharedPreferences sharedPref = getSharedPreferences("application", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("email", email);
+        editor.apply();
+    }
 }
