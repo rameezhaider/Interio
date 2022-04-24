@@ -418,7 +418,7 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
                 float dz = anchorPose.tz() - cameraPose.tz();
 
                 float distanceMeters = (float) Math.sqrt(dx * dx + dy * dy + dz * dz);
-                Log.d("Distance", "Distance from camera: " + distanceMeters + " metres");
+                runOnUiThread(() -> Toast.makeText(getApplicationContext(), "Distance Meters: " + distanceMeters, Toast.LENGTH_SHORT).show());
 
                 anchorPose.toMatrix(anchorMatrix, 0);
 
