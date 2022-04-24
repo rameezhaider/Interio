@@ -1,6 +1,8 @@
 package com.google.ar.core.examples.java.helloar;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -208,6 +210,7 @@ public class SidemenuFragment extends Fragment {
         // Share
         adapter.addItem(ContextCompat.getDrawable(v.getContext(), R.drawable.menu_logout2), "Logout") ;
 
+
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -218,6 +221,16 @@ public class SidemenuFragment extends Fragment {
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.fragment_place, new CommunityFragment());
                     fragmentTransaction.commit();
+                }
+                if (position == 4) {
+                    SharedPreferences prefs = getActivity().getSharedPreferences("application", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.remove("email");
+                    editor.apply();
+
+                    Intent intent = new Intent(getActivity(), LoginActivity.class);
+                    startActivity(intent);
+                    getActivity().finish();
                 }
             }
         });
