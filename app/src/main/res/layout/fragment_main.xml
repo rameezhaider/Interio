@@ -17,38 +17,38 @@
             tools:layout_editor_absoluteY="-185dp">
 
             <TextView
-                android:id="@+id/Title_DARI"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="25dp"
-                android:fontFamily="@font/jalnan"
-                android:text="DARI"
-                android:textColor="@color/darkbrown"
-                android:textSize="50dp" />
+                    android:id="@+id/Title_DARI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/jalnan"
+                    android:text="Interio"
+                    android:textColor="@color/background"
+                    android:textSize="50dp"/>
 
             <ImageButton
-                android:id="@+id/menu_button"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignParentRight="true"
-                android:layout_margin="25dp"
-                android:adjustViewBounds="true"
-                android:background="@color/transparent"
-                android:scaleType="fitCenter"
-                android:src="@drawable/menu_icon"
-                android:stateListAnimator="@null"/>
+                    android:id="@+id/menu_button"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:adjustViewBounds="true"
+                    android:background="@color/transparent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/menu_icon"
+                    android:stateListAnimator="@null" android:layout_marginTop="25dp" android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp" android:layout_marginBottom="25dp"/>
 
             <TextView
-                android:id="@+id/subtitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/Title_DARI"
-                android:layout_marginLeft="35dp"
-                android:fontFamily="@font/gmarketsanslight"
-                android:text="Design your home with DARI"
-                android:textSize="13dp"
-                android:textColor="@color/brown"/>
+                    android:id="@+id/subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/Title_DARI"
+                    android:layout_marginLeft="35dp"
+                    android:fontFamily="@font/gmarketsanslight"
+                    android:text="Design your home with DARI"
+                    android:textSize="13dp"
+                    android:textColor="@color/black"/>
 
             <LinearLayout
                 android:id="@+id/Search_textbox"
@@ -70,7 +70,7 @@
                     android:hint="ex)  Basket chair"
                     android:paddingLeft="18dp"
                     android:textSize="11dp"
-                    android:textColorHint="@color/darkbrown"/>
+                    android:textColorHint="@color/black"/>
 
                 <ImageButton
                     android:id="@+id/searchFurniture"
@@ -86,15 +86,15 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/categories"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/Search_textbox"
-                android:layout_marginLeft="40dp"
-                android:fontFamily="@font/gmarketsansmedium"
-                android:text="Categories >"
-                android:textSize="15dp"
-                android:textColor="@color/darkbrown"/>
+                    android:id="@+id/categories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/Search_textbox"
+                    android:layout_marginLeft="40dp"
+                    android:fontFamily="@font/gmarketsansmedium"
+                    android:text="Categories >"
+                    android:textSize="15dp"
+                    android:textColor="@color/background"/>
 
             <RelativeLayout
                 android:id="@+id/types"
@@ -106,30 +106,29 @@
 
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/bed_content">
-
-                    <Button
-                        android:id="@+id/bed"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/bed_button"
-                        android:stateListAnimator="@null"/>
-                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Bed"
-                        android:textColor="@color/brown"
-                        android:layout_below="@id/bed"
-                        android:layout_centerInParent="true"
-                        android:fontFamily="@font/gmarketsansbold"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="15dp"/>
+                        android:id="@+id/bed_content">
+
+                    <Button
+                            android:id="@+id/bed"
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/bed_button"
+                            android:stateListAnimator="@null"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bed"
+                            android:textColor="@color/background"
+                            android:layout_below="@id/bed"
+                            android:fontFamily="@font/gmarketsansbold"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="15dp" android:layout_centerInParent="true"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -139,25 +138,24 @@
                     android:layout_toRightOf="@+id/bed_content">
 
                     <Button
-                        android:id="@+id/Bedroom"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/drawer_button"
-                        android:stateListAnimator="@null"/>
+                            android:id="@+id/Bedroom"
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/drawer_button"
+                            android:stateListAnimator="@null"/>
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Drawer"
-                        android:textColor="@color/brown"
-                        android:layout_below="@id/Bedroom"
-                        android:layout_centerInParent="true"
-                        android:fontFamily="@font/gmarketsansbold"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="15dp"/>
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Drawer"
+                            android:textColor="@color/background"
+                            android:layout_below="@id/Bedroom"
+                            android:fontFamily="@font/gmarketsansbold"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="15dp" android:layout_centerInParent="true"/>
 
                 </RelativeLayout>
 
@@ -167,25 +165,24 @@
                     android:id="@+id/desk_content"
                     android:layout_below="@+id/bed_content">
                     <Button
-                        android:id="@+id/Kitchen"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/desk_button"
-                        android:stateListAnimator="@null"/>
+                            android:id="@+id/Kitchen"
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/desk_button"
+                            android:stateListAnimator="@null"/>
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Desk"
-                        android:textColor="@color/brown"
-                        android:layout_below="@id/Kitchen"
-                        android:layout_centerInParent="true"
-                        android:fontFamily="@font/gmarketsansbold"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="15dp"/>
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Desk"
+                            android:textColor="@color/background"
+                            android:layout_below="@id/Kitchen"
+                            android:fontFamily="@font/gmarketsansbold"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="15dp" android:layout_centerInParent="true"/>
 
                 </RelativeLayout>
                 <RelativeLayout
@@ -195,25 +192,24 @@
                     android:layout_toRightOf="@+id/bed_content"
                     android:layout_below="@+id/bed_content">
                     <Button
-                        android:id="@+id/Bathroom"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/chair_button"
-                        android:stateListAnimator="@null"/>
+                            android:id="@+id/Bathroom"
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/chair_button"
+                            android:stateListAnimator="@null"/>
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="chair"
-                        android:textColor="@color/brown"
-                        android:layout_below="@id/Bathroom"
-                        android:layout_centerInParent="true"
-                        android:fontFamily="@font/gmarketsansbold"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="15dp"/>
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="chair"
+                            android:textColor="@color/background"
+                            android:layout_below="@id/Bathroom"
+                            android:fontFamily="@font/gmarketsansbold"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="15dp" android:layout_centerInParent="true"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -233,15 +229,14 @@
                         android:background="@drawable/sofa_button"
                         android:stateListAnimator="@null"/>
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sofa"
-                        android:textColor="@color/brown"
-                        android:layout_below="@id/sofa"
-                        android:layout_centerInParent="true"
-                        android:fontFamily="@font/gmarketsansbold"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="15dp"/>
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sofa"
+                            android:textColor="@color/background"
+                            android:layout_below="@id/sofa"
+                            android:fontFamily="@font/gmarketsansbold"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="15dp" android:layout_centerInParent="true"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -265,7 +260,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Table"
-                        android:textColor="@color/brown"
+                        android:textColor="@color/background"
                         android:layout_below="@id/table"
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/gmarketsansbold"

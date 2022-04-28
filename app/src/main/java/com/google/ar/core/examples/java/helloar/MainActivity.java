@@ -29,6 +29,7 @@ import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 
 import android.os.Environment;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -289,15 +290,16 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
             // Create the texture and pass it to ARCore session to be filled during update().
             depthTexture.createOnGlThread();
             backgroundRenderer.createOnGlThread(/*context=*/ this, depthTexture.getTextureId());
-            // 바닥 인식 이미지 png로 변경가능
+            //Floor recognition image can be changed to png
             planeRenderer.createOnGlThread(/*context=*/ this, "models/trigrid.png");//바닥 이미지
             pointCloudRenderer.createOnGlThread(/*context=*/ this);
-            // 3D obj 파일 변경 및 texture 파일 변경
+            // Change 3D obj file and change texture file
             virtualObject.createOnGlThread(/*context=*/ this, obj_file, png_file);//obj & texture파일
             virtualObject.setBlendMode(BlendMode.AlphaBlending);
             virtualObject.setDepthTexture(
                     depthTexture.getTextureId(), depthTexture.getWidth(), depthTexture.getHeight());
-            // 빛 세기 ambient(주변광), diffuse(분산광), specular(반사광)//0.0f,2.0f,0.5f,6.0f
+            //Light intensity ambient, diffuse, specular
+            // 0.0f,2.0f,0.5f,6.0f
             virtualObject.setMaterialProperties(0.0f, 2.0f, 0.5f, 6.0f);
 
         } catch (IOException e) {
@@ -381,8 +383,7 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
             // Use try-with-resources to automatically release the point cloud.
             try (PointCloud pointCloud = frame.acquirePointCloud()) {
                 pointCloudRenderer.update(pointCloud);
-                //region ###################################### 물체 인식하는 point cloud(파란색 점)삭제 #######################################
-                //pointCloudRenderer.draw(viewmtx, projmtx);
+                 //pointCloudRenderer.draw(viewmtx, projmtx);
                 //endregion
             }
 
@@ -400,11 +401,10 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
                     session.getAllTrackables(Plane.class), camera.getDisplayOrientedPose(), projmtx);
 
             // Visualize anchors created by touch.
-            float scaleFactor = 1.0f; //scale관련
+            float scaleFactor = 1.0f; //scale related
             virtualObject.setUseDepthForOcclusion(this, depthSettings.useDepthForOcclusion());
             //endregion
             for (ColoredAnchor coloredAnchor : anchors) {
-                //region...생략...
                 if (coloredAnchor.anchor.getTrackingState() != TrackingState.TRACKING) {
                     continue;
                 }

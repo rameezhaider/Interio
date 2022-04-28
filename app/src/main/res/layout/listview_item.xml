@@ -27,7 +27,7 @@
             android:text="New Text"
             android:id="@+id/textView1"
             android:textSize="14dp"
-            android:textColor="@color/beige"
+            android:textColor="@color/background"
             android:gravity="center_vertical"
             android:layout_weight="2"
             android:fontFamily="@font/gmarketsansmedium"/>

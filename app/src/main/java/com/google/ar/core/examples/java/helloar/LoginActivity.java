@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
 
         mLoginBtn = findViewById(R.id.signInBtn);
         mRegistBtn = findViewById(R.id.singUpBtn);
-        //가입 버튼이 눌리면
+        //When the signup button is clicked
         mRegistBtn.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {

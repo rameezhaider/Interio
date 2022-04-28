@@ -11,7 +11,9 @@
     <color name="beige">#AF957B</color>
     <color name="darkbrown">#4E3627</color>
     <color name="brown">#F3604636</color>
-    <color name="browntransparent">#6B715645</color>
+    <color name="backgroundtransparent">#801B4976</color>
     <color name="camel">#87644F</color>
     <color name="lightblue">#88B4FF</color>
+    <color name="background">#1B4976</color>
+    <color name="black">#000000</color>
 </resources>
