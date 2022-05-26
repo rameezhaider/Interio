@@ -8,11 +8,10 @@
 
 
     <fragment
-        android:id="@+id/fragment_place"
-        android:name="com.google.ar.core.examples.java.helloar.MainFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        tools:layout="@layout/fragment_main" />
+            android:id="@+id/fragment_place"
+            android:name="com.google.ar.core.examples.java.helloar.MainFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_main" android:layout_centerInParent="true"/>
 
 </RelativeLayout>

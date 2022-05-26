@@ -56,7 +56,7 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //가입 정보 가져오기
+                //Get subscription information
                 final String email = mEmailText.getText().toString().trim();
                 String pwd = mPasswordText.getText().toString().trim();
                 String pwdcheck = mPasswordcheckText.getText().toString().trim();
@@ -69,7 +69,7 @@ public class SignUpActivity extends AppCompatActivity {
                     mDialog.setMessage("Signing up...");
                     mDialog.show();
 
-                    //파이어베이스에 신규계정 등록하기
+                    //Register a new account on Firebase
                     firebaseAuth.createUserWithEmailAndPassword(email, pwd).addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {

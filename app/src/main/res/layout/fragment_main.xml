@@ -46,7 +46,7 @@
                     android:layout_below="@+id/Title_DARI"
                     android:layout_marginLeft="35dp"
                     android:fontFamily="@font/gmarketsanslight"
-                    android:text="Design your home with DARI"
+                    android:text="Design your home with Interio"
                     android:textSize="13dp"
                     android:textColor="@color/black"/>
 

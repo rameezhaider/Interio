@@ -32,8 +32,10 @@ import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -88,10 +90,13 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
     private static final String TAG = MainActivity.class.getSimpleName();
     //plane check variable
     public static int plane_check=0;
-
-    // Rendering. The Renderers are created here, and initialized when the GL surface is created.
+    int[][] bed={{7,4},{6,5},{7,5},{5,8},{7,3},{7,8}};
+    int[][] chair={{7,4},{6,5},{7,5},{5,8},{7,3},{7,8}};
+    int[][] table={{7,4},{6,5},{7,5},{5,8},{7,3},{7,8}};
+    int[][] sofa={{7,4},{6,5},{7,5},{5,8},{7,3},{7,8}};
+    int[][] drawer={{7,4},{6,5},{7,5},{5,8},{7,3},{7,8}};
+    int[][] desk={{7,4},{6,5},{7,5},{5,8},{7,3},{7,8}};
     private GLSurfaceView surfaceView;
-
     private boolean installRequested;
 
     private Session session;
@@ -127,16 +132,16 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
         }
     }
 
-    //추가변수1
+    //additional variable 1
     public static RotationGestureDetector mRotationDetector;
     public static MyScaleGestures scaleGestureDetector;
     public static MotionEvent motionEvent;
 
-    //컨텍스트
-    //변수 obj png
+    //context
+    //variable obj png
     public static String obj_file = "";
     public static String png_file = "";
-    //파일 카운터
+    //file counter
     public static int cnt = 0;
     public static boolean isObjectReplaced;
 
@@ -156,8 +161,7 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
         // Set up tap listener.
         tapHelper = new TapHelper(/*context=*/ this);
         surfaceView.setOnTouchListener(tapHelper);
-        //endregion ...생략....
-        //region...생략...
+        //endregion ...skip....
         // Set up renderer.
         surfaceView.setPreserveEGLContextOnPause(true);
         surfaceView.setEGLContextClientVersion(2);
@@ -170,10 +174,14 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
         calculateUVTransform = true;
 
         depthSettings.onCreate(this);
+        Button btn = findViewById(R.id.btnDimensions);
         ImageButton settingsButton = findViewById(R.id.settings_button);
         settingsButton.setOnClickListener(this::launchSettingsMenuDialog);
-        //endregion...생략...
+        btn.setOnClickListener((View v) -> {
+            Callnext();
+        });;
     }
+//
 
     @Override
     protected void onResume() {
@@ -281,6 +289,11 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
     }
     //endregion
 
+    public void Callnext()
+    {
+        Intent intent = new Intent(this, Dimensions.class);
+        startActivity(intent);
+    }
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
         GLES20.glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
@@ -704,18 +717,15 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
             anchors.get(anchors.size() - 1).anchor.detach();
             anchors.remove(anchors.size() - 1);
         }
-        Toast.makeText(getApplicationContext(), "삭제되었습니다", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "has been deleted", Toast.LENGTH_SHORT).show();
     }
-    //endregion
 
-    //region=======객체 회전 method=======
     @Override
     public void OnRotation(RotationGestureDetector rotationDetector) {
         GlobalClass.rotateF = GlobalClass.rotateF + rotationDetector.getAngle() / 10;
     }
     //endregion
 
-    //region=======plane rendering 제거 method=======
     public void plane_check_Method(View v) {
         if(plane_check==0){
             Toast.makeText(getApplicationContext(), "Plane Renderer가 제거되었습니다", Toast.LENGTH_SHORT).show();

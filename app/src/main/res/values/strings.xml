@@ -15,7 +15,9 @@
 -->
 <resources>
     <string name="app_name" translatable="false">Interio</string>
-    <string name="depth_use_explanation" translatable="false">When Depth is enabled on supported devices, virtual objects adapt to the environment by blending in with the real world.</string>
+    <string name="depth_use_explanation" translatable="false">When Depth is enabled on supported devices, virtual
+        objects adapt to the environment by blending in with the real world.
+    </string>
     <string name="button_text_enable_depth" translatable="false">Enable</string>
     <string name="button_text_disable_depth" translatable="false">Disable</string>
     <string name="options_title_with_depth" translatable="false">Your device supports depth</string>
