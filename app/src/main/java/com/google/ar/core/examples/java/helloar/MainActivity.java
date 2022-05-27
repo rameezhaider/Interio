@@ -80,11 +80,6 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.egl.EGLContext;
 import javax.microedition.khronos.opengles.GL10;
 
-/**
- * This is a simple example that shows how to create an augmented reality (AR) application using the
- * ARCore API. The application will display any detected planes and will allow the user to tap on a
- * plane to place a 3d model of the Android robot.
- */
 
 public class MainActivity extends AppCompatActivity implements GLSurfaceView.Renderer, RotationGestureDetector.OnRotationGestureListener {
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -152,7 +147,6 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //region ...생략....
         surfaceView = findViewById(R.id.surfaceview);
         displayRotationHelper = new DisplayRotationHelper(/*context=*/ this);
         mRotationDetector = new RotationGestureDetector(this);
@@ -161,8 +155,7 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
         // Set up tap listener.
         tapHelper = new TapHelper(/*context=*/ this);
         surfaceView.setOnTouchListener(tapHelper);
-        //endregion ...skip....
-        // Set up renderer.
+
         surfaceView.setPreserveEGLContextOnPause(true);
         surfaceView.setEGLContextClientVersion(2);
         surfaceView.setEGLConfigChooser(8, 8, 8, 8, 16, 0); // Alpha used for plane blending.
@@ -279,9 +272,7 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
             finish();
         }
     }
-    //endregion
 
-    //region Android full screen mode 세팅
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
@@ -328,7 +319,6 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
 
     @Override
     public void onDrawFrame(GL10 gl) {
-        //region...생략...
         // Clear screen to notify driver it should not load any pixels from previous frame.
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
 
@@ -340,7 +330,7 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
         displayRotationHelper.updateSessionIfNeeded(session);
         //endregion
         try {
-            //region...생략...
+
             session.setCameraTextureName(backgroundRenderer.getTextureId());
 
             // Obtain the current frame from ARSession. When the configuration is set to
@@ -436,7 +426,7 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
             // Avoid crashing the application due to unhandled exceptions.
             Log.e(TAG, "Exception on the OpenGL thread", t);
         }
-        //3D 객체 교체시 필요
+
         if (isObjectReplaced) {
             isObjectReplaced = false;
             try {
@@ -500,10 +490,6 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
         }
     }
 
-    /**
-     * Shows a pop-up dialog on the first call, determining whether the user wants to enable
-     * depth-based occlusion. The result of this dialog can be retrieved with useDepthForOcclusion().
-     */
     private void showOcclusionDialogIfNeeded() {
         boolean isDepthSupported = session.isDepthModeSupported(Config.DepthMode.AUTOMATIC);
         if (!depthSettings.shouldShowDepthEnableDialog() || !isDepthSupported) {
@@ -586,11 +572,6 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
         return false;
     }
 
-    /**
-     * Returns a transformation matrix that when applied to screen space uvs makes them match
-     * correctly with the quad texture coords used to render the camera feed. It takes into account
-     * device orientation.
-     */
     private static float[] getTextureTransformMatrix(Frame frame) {
         float[] frameTransform = new float[6];
         float[] uvTransform = new float[9];
@@ -650,19 +631,6 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
     }
 
     public void captureMethod(View v) {
-//전에 작업했던 내용
-//    EGL10 egl = (EGL10) EGLContext.getEGL();
-//    GL10 gl = (GL10)egl.eglGetCurrentContext().getGL();
-//    v = getWindow().getDecorView();
-//
-//    String imagePath = null;
-//    Bitmap imageBitmap = createBitmapFromGLSurface(0, 0, v.getWidth(), v.getHeight(), gl);
-//
-//    if (imageBitmap != null) {
-//      imagePath = MediaStore.Images.Media.insertImage(getContentResolver(), imageBitmap, "DARI", null);
-//    }
-        //endregion
-
         captureBitmap(new BitmapReadyCallbacks() {
 
             @Override
@@ -720,10 +688,12 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
 
     public void plane_check_Method(View v) {
         if(plane_check==0){
-            Toast.makeText(getApplicationContext(), "Plane Renderer가 제거되었습니다", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "\n" +
+                    "Plane Renderer has been removed", Toast.LENGTH_SHORT).show();
             plane_check=1;
         }else if(plane_check==1){
-            Toast.makeText(getApplicationContext(), "Plane Renderer가 생성되었습니다", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "\n" +
+                    "A Plane Renderer has been created", Toast.LENGTH_SHORT).show();
             plane_check=0;
         }
 
