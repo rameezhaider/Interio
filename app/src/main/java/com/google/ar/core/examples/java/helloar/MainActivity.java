@@ -669,9 +669,7 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
         }
         return Bitmap.createBitmap(bitmapSource, w, h, Bitmap.Config.ARGB_8888);
     }
-//endregion
 
-    //region=======객체 삭제 method=======
     public void deleteMethod(View v) {
         if (anchors.size() >= 1) {
             anchors.get(anchors.size() - 1).anchor.detach();
@@ -698,5 +696,4 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
         }
 
     }
-    //endregion
 }

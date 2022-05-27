@@ -16,11 +16,7 @@ import static com.google.ar.core.examples.java.helloar.MainActivity.isObjectRepl
 import static com.google.ar.core.examples.java.helloar.MainActivity.obj_file;
 import static com.google.ar.core.examples.java.helloar.MainActivity.png_file;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link BathroomFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class BathroomFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -43,14 +39,7 @@ public class BathroomFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment BathroomFragment.
-     */
+
     // TODO: Rename and change types and number of parameters
     public static BathroomFragment newInstance(String param1, String param2) {
         BathroomFragment fragment = new BathroomFragment();

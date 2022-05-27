@@ -17,11 +17,6 @@ import static com.google.ar.core.examples.java.helloar.MainActivity.isObjectRepl
 import static com.google.ar.core.examples.java.helloar.MainActivity.obj_file;
 import static com.google.ar.core.examples.java.helloar.MainActivity.png_file;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SofaFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class SofaFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
