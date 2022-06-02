@@ -12,10 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import static com.google.ar.core.examples.java.helloar.MainActivity.cnt;
-import static com.google.ar.core.examples.java.helloar.MainActivity.isObjectReplaced;
-import static com.google.ar.core.examples.java.helloar.MainActivity.obj_file;
-import static com.google.ar.core.examples.java.helloar.MainActivity.png_file;
+import static com.google.ar.core.examples.java.helloar.MainActivity.*;
+import static com.google.ar.core.examples.java.helloar.MainActivity.size_width;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -95,6 +93,8 @@ public class TableFragment extends Fragment {
                 if (cnt == 0) {
                     obj_file = "models/table1.obj";
                     png_file = "models/table_texture4.png";
+                    size_height=0.98;
+                    size_width=1.3;
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -108,6 +108,8 @@ public class TableFragment extends Fragment {
                 if (cnt == 0) {
                     obj_file = "models/table2.obj";
                     png_file = "models/table_texture4.png";
+                    size_height=1.6;
+                    size_width=1.1;
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -124,7 +126,6 @@ public class TableFragment extends Fragment {
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
-
             }
         });
         table4 = (ImageButton) v.findViewById(R.id.table4);
@@ -134,6 +135,8 @@ public class TableFragment extends Fragment {
                 if (cnt == 0) {
                     obj_file = "models/table4.obj";
                     png_file = "models/table_texture5.png";
+                    size_height=1.6;
+                    size_width=1.1;
                     isObjectReplaced = true;
                 }
             }
@@ -145,6 +148,8 @@ public class TableFragment extends Fragment {
                 if (cnt == 0) {
                     obj_file = "models/table5.obj";
                     png_file = "models/table_texture5.png";
+                    size_height=1.5;
+                    size_width=1.87;
                     isObjectReplaced = true;
                 }
             }

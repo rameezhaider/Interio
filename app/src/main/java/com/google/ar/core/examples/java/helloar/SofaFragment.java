@@ -16,6 +16,9 @@ import static com.google.ar.core.examples.java.helloar.MainActivity.cnt;
 import static com.google.ar.core.examples.java.helloar.MainActivity.isObjectReplaced;
 import static com.google.ar.core.examples.java.helloar.MainActivity.obj_file;
 import static com.google.ar.core.examples.java.helloar.MainActivity.png_file;
+import static com.google.ar.core.examples.java.helloar.MainActivity.size_height;
+import static com.google.ar.core.examples.java.helloar.MainActivity.size_width;
+
 
 public class SofaFragment extends Fragment {
 
@@ -89,6 +92,8 @@ public class SofaFragment extends Fragment {
                 if (cnt == 0) {
                     obj_file = "models/sofa1.obj";
                     png_file = "models/bed_texture3.png";
+                    size_height=0.75;
+                    size_width=1.1;
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -102,6 +107,8 @@ public class SofaFragment extends Fragment {
                 if (cnt == 0) {
                     obj_file = "models/sofa2.obj";
                     png_file = "models/table_texture5.png";
+                    size_height=0.5;
+                    size_width=1.1;
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -115,6 +122,8 @@ public class SofaFragment extends Fragment {
                 if (cnt == 0) {
                     obj_file = "models/sofa3.obj";
                     png_file = "models/table_texture5.png";
+                    size_height=0.6;
+                    size_width=1.3;
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -128,6 +137,8 @@ public class SofaFragment extends Fragment {
                 if (cnt == 0) {
                     obj_file = "models/sofa4.obj";
                     png_file = "models/table_texture4.png";
+                    size_height=0.6;
+                    size_width=2.1;
                     isObjectReplaced = true;
                 }
             }
@@ -139,6 +150,8 @@ public class SofaFragment extends Fragment {
                 if (cnt == 0) {
                     obj_file = "models/sofa5.obj";
                     png_file = "models/bed5.png";
+                    size_height=1;
+                    size_width=2.1;
                     isObjectReplaced = true;
                 }
             }
@@ -150,6 +163,8 @@ public class SofaFragment extends Fragment {
                 if (cnt == 0) {
                     obj_file = "models/sofa6.obj";
                     png_file = "models/table_texture6.png";
+                    size_height=1;
+                    size_width=2.1;
                     isObjectReplaced = true;
                 }
             }

@@ -12,10 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import static com.google.ar.core.examples.java.helloar.MainActivity.cnt;
-import static com.google.ar.core.examples.java.helloar.MainActivity.isObjectReplaced;
-import static com.google.ar.core.examples.java.helloar.MainActivity.obj_file;
-import static com.google.ar.core.examples.java.helloar.MainActivity.png_file;
+import static com.google.ar.core.examples.java.helloar.MainActivity.*;
+import static com.google.ar.core.examples.java.helloar.MainActivity.size_width;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -90,6 +88,8 @@ public class KitchenFragment extends Fragment {
                 if (cnt == 0) {
                     obj_file = "models/table3.obj";
                     png_file = "models/table_texture6.png";
+                    size_height=2;
+                    size_width=0.76;
                     isObjectReplaced = true;
                 }
             }
@@ -101,6 +101,8 @@ public class KitchenFragment extends Fragment {
                 if (cnt == 0) {
                     obj_file = "models/desk2.obj";
                     png_file = "models/table_texture5.png";
+                    size_height=2;
+                    size_width=1.25;
                     isObjectReplaced = true;
                 }
             }

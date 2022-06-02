@@ -15,6 +15,8 @@ import static com.google.ar.core.examples.java.helloar.MainActivity.cnt;
 import static com.google.ar.core.examples.java.helloar.MainActivity.isObjectReplaced;
 import static com.google.ar.core.examples.java.helloar.MainActivity.obj_file;
 import static com.google.ar.core.examples.java.helloar.MainActivity.png_file;
+import static com.google.ar.core.examples.java.helloar.MainActivity.size_height;
+import static com.google.ar.core.examples.java.helloar.MainActivity.size_width;
 
 
 public class BedroomFragment extends Fragment {
@@ -77,6 +79,8 @@ public class BedroomFragment extends Fragment {
                 if (cnt == 0) {
                     obj_file = "models/storage1.obj";
                     png_file = "models/table_texture5.png";
+                    size_height=1;
+                    size_width=2.1;
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -90,6 +94,8 @@ public class BedroomFragment extends Fragment {
                 if (cnt == 0) {
                     obj_file = "models/storage2.obj";
                     png_file = "models/table_texture5.png";
+                    size_height=1.3;
+                    size_width=2;
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -103,6 +109,8 @@ public class BedroomFragment extends Fragment {
                 if (cnt == 0) {
                     obj_file = "models/storage3.obj";
                     png_file = "models/bed_texture1.png";
+                    size_height=1;
+                    size_width=2.2;
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }

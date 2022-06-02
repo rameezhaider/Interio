@@ -30,6 +30,7 @@ import android.os.Bundle;
 
 import android.os.Environment;
 import android.os.Handler;
+import android.os.Looper;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Gravity;
@@ -85,12 +86,6 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
     private static final String TAG = MainActivity.class.getSimpleName();
     //plane check variable
     public static int plane_check=0;
-    int[][] bed={{7,4},{6,5},{7,5},{5,8},{7,3},{7,8}};
-    int[][] chair={{7,4},{6,5},{7,5},{5,8},{7,3},{7,8}};
-    int[][] table={{7,4},{6,5},{7,5},{5,8},{7,3},{7,8}};
-    int[][] sofa={{7,4},{6,5},{7,5},{5,8},{7,3},{7,8}};
-    int[][] drawer={{7,4},{6,5},{7,5},{5,8},{7,3},{7,8}};
-    int[][] desk={{7,4},{6,5},{7,5},{5,8},{7,3},{7,8}};
     private GLSurfaceView surfaceView;
     private boolean installRequested;
 
@@ -136,6 +131,8 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
     //variable obj png
     public static String obj_file = "";
     public static String png_file = "";
+    public static double size_width=0;
+    public static double size_height=0;
     //file counter
     public static int cnt = 0;
     public static boolean isObjectReplaced;
@@ -298,13 +295,15 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
             planeRenderer.createOnGlThread(/*context=*/ this, "models/trigrid.png");//바닥 이미지
             pointCloudRenderer.createOnGlThread(/*context=*/ this);
             // Change 3D obj file and change texture file
-            virtualObject.createOnGlThread(/*context=*/ this, obj_file, png_file);//obj & texture파일
+            virtualObject.createOnGlThread(/*context=*/ this, obj_file, png_file);//obj & texture
             virtualObject.setBlendMode(BlendMode.AlphaBlending);
             virtualObject.setDepthTexture(
                     depthTexture.getTextureId(), depthTexture.getWidth(), depthTexture.getHeight());
             //Light intensity ambient, diffuse, specular
             // 0.0f,2.0f,0.5f,6.0f
             virtualObject.setMaterialProperties(0.0f, 2.0f, 0.5f, 6.0f);
+            String concatstring="height:"+size_height+" width:"+size_width;
+            Toast.makeText(getApplicationContext(),concatstring,Toast.LENGTH_SHORT).show();
 
         } catch (IOException e) {
             Log.e(TAG, "Failed to read an asset file", e);
@@ -435,6 +434,8 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
                 virtualObject.setDepthTexture(
                         depthTexture.getTextureId(), depthTexture.getWidth(), depthTexture.getHeight());//Depth Settings(depth 적용)
                 virtualObject.setMaterialProperties(0.0f, 2.0f, 0.5f, 6.0f);
+                String concatstring="height:"+size_height+" width:"+size_width;
+                runOnUiThread(() -> Toast.makeText(getApplicationContext(), concatstring, Toast.LENGTH_LONG).show());
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -636,11 +637,14 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
             @Override
             public void onBitmapReady(Bitmap bitmap) {
                 MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "DARI", null);
+                //save image to use in another activity
+//                Intent intent = new Intent(getApplicationContext(), ImageActivity.class);
+//                intent.putExtra("image", bitmap);
             }
         });
 
 
-        Toast.makeText(getApplicationContext(), "화면이 저장되었습니다", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "screen is saved1", Toast.LENGTH_SHORT).show();
     }
 
     private Bitmap createBitmapFromGLSurface(int x, int y, int w, int h, GL10 gl)

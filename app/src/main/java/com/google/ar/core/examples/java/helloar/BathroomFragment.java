@@ -11,11 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import static com.google.ar.core.examples.java.helloar.MainActivity.cnt;
-import static com.google.ar.core.examples.java.helloar.MainActivity.isObjectReplaced;
-import static com.google.ar.core.examples.java.helloar.MainActivity.obj_file;
-import static com.google.ar.core.examples.java.helloar.MainActivity.png_file;
-
+import static com.google.ar.core.examples.java.helloar.MainActivity.*;
+import static com.google.ar.core.examples.java.helloar.MainActivity.size_width;
+import static com.google.ar.core.examples.java.helloar.MainActivity.size_height;
 
 public class BathroomFragment extends Fragment {
 
@@ -82,6 +80,8 @@ public class BathroomFragment extends Fragment {
                 if (cnt == 0) {
                     obj_file = "models/chair1.obj";
                     png_file = "models/table_texture5.png";
+                    size_height=1;
+                    size_width=2.1;
 //                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -95,6 +95,8 @@ public class BathroomFragment extends Fragment {
                 if (cnt == 0) {
                     obj_file = "models/chair2.obj";
                     png_file = "models/table_texture4.png";
+                    size_height=1.5;
+                    size_width=1.1;
 //                    cnt = cnt + 1; 
                     isObjectReplaced = true;
                 }
@@ -108,6 +110,8 @@ public class BathroomFragment extends Fragment {
                 if (cnt == 0) {
                     obj_file = "models/chair3.obj";
                     png_file = "models/table_texture5.png";
+                    size_height=1.3;
+                    size_width=0.7;
 ////                    cnt = cnt + 1;
                     isObjectReplaced = true;
                 }
@@ -121,6 +125,8 @@ public class BathroomFragment extends Fragment {
                 if (cnt == 0) {
                     obj_file = "models/chair4.obj";
                     png_file = "models/table_texture5.png";
+                    size_height=0.6;
+                    size_width=1.5;
                     isObjectReplaced = true;
                 }
             }
