@@ -2,10 +2,9 @@ package com.google.ar.core.examples.java.helloar;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -18,20 +17,12 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.io.IOException;
 import java.util.UUID;
 
 public class upload extends AppCompatActivity {
 
-    // views for button
     private Button btnSelect, btnUpload;
-
-    // view for image view
-
     private ImageView imageView;
-
-    // Uri indicates, where the image will be picked from
-    private Uri filePath;
 
     // request code
 //    private final int PICK_IMAGE_REQUEST = 22;
@@ -59,7 +50,7 @@ public class upload extends AppCompatActivity {
         btnSelect.setOnClickListener(v -> SelectImage());
 
         // on pressing btnUpload uploadImage() is called
-        btnUpload.setOnClickListener(v -> uploadImage());
+        btnUpload.setOnClickListener(v -> SelectImage());
     }
 
     // Select Image method
@@ -84,17 +75,14 @@ public class upload extends AppCompatActivity {
                 resultCode,
                 data);
 
-        // checking request code and result code
-        // if request code is PICK_IMAGE_REQUEST and
-        // resultCode is RESULT_OK
-        // then set image in the image view
         if (requestCode == 1
                 && resultCode == RESULT_OK
                 && data != null
                 && data.getData() != null) {
 
             // Get the Uri of data
-            filePath = data.getData();
+            Uri filePath = data.getData();
+            uploadImage(filePath);
             imageView.setImageURI(filePath);
 //            try {
 //
@@ -116,8 +104,10 @@ public class upload extends AppCompatActivity {
     }
 
     // UploadImage method
-    private void uploadImage()
+    private void uploadImage(Uri filePath)
     {
+
+        Toast.makeText(this, "update called", Toast.LENGTH_SHORT).show();
         final  ProgressDialog pd;
         pd = new ProgressDialog(this);
         pd.setTitle("Uploading Image");

@@ -206,6 +206,12 @@ public class SidemenuFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                if(position == 1)
+                {
+                    Intent i = new Intent(getActivity(),upload.class);
+                    startActivity(i);
+
+                }
                 if(position == 2)
                 {
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();

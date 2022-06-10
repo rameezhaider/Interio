@@ -27,6 +27,8 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:usesCleartextTraffic="false"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".upload"
+                  android:exported="true" />
         <activity
                 android:name=".Dimensions"
                 android:exported="true"/>
