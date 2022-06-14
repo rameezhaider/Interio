@@ -292,7 +292,7 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
             depthTexture.createOnGlThread();
             backgroundRenderer.createOnGlThread(/*context=*/ this, depthTexture.getTextureId());
             //Floor recognition image can be changed to png
-            planeRenderer.createOnGlThread(/*context=*/ this, "models/trigrid.png");//바닥 이미지
+            planeRenderer.createOnGlThread( this, "models/trigrid.png");//floor image
             pointCloudRenderer.createOnGlThread(/*context=*/ this);
             // Change 3D obj file and change texture file
             virtualObject.createOnGlThread(/*context=*/ this, obj_file, png_file);//obj & texture
@@ -459,10 +459,11 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
                         == OrientationMode.ESTIMATED_SURFACE_NORMAL)) {
                     // Hits are sorted by depth. Consider only closest hit on a plane or oriented point.
                     // Cap the number of objects created. This avoids overloading both the
+                    // Cap the number of objects created. This avoids overloading both the
                     // rendering system and ARCore.
-                    if (anchors.size() >= 1) {
-                        anchors.get(0).anchor.detach();
-                        anchors.remove(0);
+                    if (anchors.size() >= 2) {
+                        anchors.get(1).anchor.detach();
+                        anchors.remove(1);
                     }
 
                     // Assign a color to the object for rendering based on the trackable type
