@@ -432,7 +432,7 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
                 virtualObject.createOnGlThread(this, obj_file, png_file);
                 virtualObject.setBlendMode(BlendMode.AlphaBlending);
                 virtualObject.setDepthTexture(
-                        depthTexture.getTextureId(), depthTexture.getWidth(), depthTexture.getHeight());//Depth Settings(depth 적용)
+                        depthTexture.getTextureId(), depthTexture.getWidth(), depthTexture.getHeight());//Depth Settings(depth apply)
                 virtualObject.setMaterialProperties(0.0f, 2.0f, 0.5f, 6.0f);
                 String concatstring="height:"+size_height+" width:"+size_width;
                 runOnUiThread(() -> Toast.makeText(getApplicationContext(), concatstring, Toast.LENGTH_LONG).show());
