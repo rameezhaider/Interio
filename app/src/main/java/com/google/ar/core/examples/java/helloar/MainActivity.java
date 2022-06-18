@@ -135,6 +135,7 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
     public static double size_height=0;
     //file counter
     public static int cnt = 0;
+    public static int modelsize= 0;
     public static boolean isObjectReplaced;
 
 
@@ -434,6 +435,7 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
                 virtualObject.setDepthTexture(
                         depthTexture.getTextureId(), depthTexture.getWidth(), depthTexture.getHeight());//Depth Settings(depth apply)
                 virtualObject.setMaterialProperties(0.0f, 2.0f, 0.5f, 6.0f);
+                modelsize++;
                 String concatstring="height:"+size_height+" width:"+size_width;
                 runOnUiThread(() -> Toast.makeText(getApplicationContext(), concatstring, Toast.LENGTH_LONG).show());
             } catch (IOException e) {
@@ -461,9 +463,9 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
                     // Cap the number of objects created. This avoids overloading both the
                     // Cap the number of objects created. This avoids overloading both the
                     // rendering system and ARCore.
-                    if (anchors.size() >= 2) {
-                        anchors.get(1).anchor.detach();
-                        anchors.remove(1);
+                    if (anchors.size() >= modelsize) {
+                        anchors.get(modelsize-1).anchor.detach();
+                        anchors.remove(modelsize-1);
                     }
 
                     // Assign a color to the object for rendering based on the trackable type
@@ -676,9 +678,10 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
     }
 
     public void deleteMethod(View v) {
-        if (anchors.size() >= 1) {
+        if (anchors.size() >= modelsize) {
             anchors.get(anchors.size() - 1).anchor.detach();
             anchors.remove(anchors.size() - 1);
+            modelsize--;
         }
         Toast.makeText(getApplicationContext(), "has been deleted", Toast.LENGTH_SHORT).show();
     }
