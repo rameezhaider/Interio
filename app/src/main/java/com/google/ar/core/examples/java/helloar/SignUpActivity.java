@@ -74,7 +74,7 @@ public class SignUpActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
 
-                            //가입 성공시
+
                             if (task.isSuccessful()) {
                                 mDialog.dismiss();
 
@@ -82,8 +82,6 @@ public class SignUpActivity extends AppCompatActivity {
                                 String uid = user.getUid();
                                 String name = mName.getText().toString().trim();
 
-
-                                //해쉬맵 테이블을 파이어베이스 데이터베이스에 저장
                                 HashMap<Object, String> hashMap = new HashMap<>();
 
                                 hashMap.put("uid", uid);
@@ -95,7 +93,6 @@ public class SignUpActivity extends AppCompatActivity {
                                 reference.child(uid).setValue(hashMap);
 
 
-                                //가입이 이루어져을시 가입 화면을 빠져나감.
                                 Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
                                 startActivity(intent);
                                 finish();
@@ -119,7 +116,6 @@ public class SignUpActivity extends AppCompatActivity {
                         }
                     });
 
-                    //비밀번호 오류시
                 } else {
 
                     Toast.makeText(SignUpActivity.this, "The password is wrong. Please re-enter.", Toast.LENGTH_SHORT).show();

@@ -23,11 +23,6 @@ public class upload extends AppCompatActivity {
 
     private Button btnSelect, btnUpload;
     private ImageView imageView;
-
-    // request code
-//    private final int PICK_IMAGE_REQUEST = 22;
-
-    // instance for firebase storage and StorageReference
     private FirebaseStorage storage;
     private StorageReference storageReference;
 
@@ -84,22 +79,6 @@ public class upload extends AppCompatActivity {
             Uri filePath = data.getData();
             uploadImage(filePath);
             imageView.setImageURI(filePath);
-//            try {
-//
-//                // Setting image on image view using Bitmap
-//                Bitmap bitmap = MediaStore
-//                        .Images
-//                        .Media
-//                        .getBitmap(
-//                                getContentResolver(),
-//                                filePath);
-//                imageView.setImageBitmap(bitmap);
-//            }
-//
-//            catch (IOException e) {
-//                // Log the exception
-//                e.printStackTrace();
-//            }
         }
     }
 
@@ -140,62 +119,5 @@ public class upload extends AppCompatActivity {
                                         "Uploaded "
                                                 + (int)progress + "%");
                             });
-
-//        if (filePath != null) {
-//
-//            // Code for showing progressDialog while uploading
-//            ProgressDialog progressDialog
-//                    = new ProgressDialog(this);
-//            progressDialog.setTitle("Uploading...");
-//            progressDialog.show();
-//
-//            // Defining the child of storageReference
-//            StorageReference ref
-//                    = storageReference
-//                    .child(
-//                            "images/"
-//                                    + UUID.randomUUID().toString());
-//
-//            // adding listeners on upload
-//            // or failure of image
-//            // Progress Listener for loading
-//            // percentage on the dialog box
-//            ref.putFile(filePath)
-//                    .addOnSuccessListener(
-//                            taskSnapshot -> {
-//
-//                                // Image uploaded successfully
-//                                // Dismiss dialog
-//                                progressDialog.dismiss();
-//                                Toast
-//                                        .makeText(upload.this,
-//                                                "Image Uploaded!!",
-//                                                Toast.LENGTH_SHORT)
-//                                        .show();
-//                            })
-//
-//                    .addOnFailureListener(e -> {
-//
-//                        // Error, Image not uploaded
-//                        progressDialog.dismiss();
-//                        Toast
-//                                .makeText(upload.this,
-//                                        "Failed " + e.getMessage(),
-//                                        Toast.LENGTH_SHORT)
-//                                .show();
-//                    })
-//                    .addOnProgressListener(
-//                            taskSnapshot -> {
-//                                double progress
-//                                        = (100.0
-//                                        * taskSnapshot.getBytesTransferred()
-//                                        / taskSnapshot.getTotalByteCount());
-//                                progressDialog.setMessage(
-//                                        "Uploaded "
-//                                                + (int)progress + "%");
-//                            });
-//        }
-
-
     }
 }

@@ -195,7 +195,7 @@ public class SidemenuFragment extends Fragment {
         // Wishlist
         adapter.addItem(ContextCompat.getDrawable(v.getContext(), R.drawable.menu_like2), "Wishlist") ;
         // Share
-        adapter.addItem(ContextCompat.getDrawable(v.getContext(), R.drawable.menu_share2), "Community") ;
+        adapter.addItem(ContextCompat.getDrawable(v.getContext(), R.drawable.menu_share2), "Reviews") ;
         // Share
         adapter.addItem(ContextCompat.getDrawable(v.getContext(), R.drawable.menu_setting2), "Setting") ;
         // Share
@@ -210,6 +210,8 @@ public class SidemenuFragment extends Fragment {
                     Intent i = new Intent(getActivity(),MultipleObjects.class);
                     startActivity(i);
                 }
+
+
                 if(position == 1)
                 {
                     Intent i = new Intent(getActivity(),upload.class);
@@ -218,10 +220,8 @@ public class SidemenuFragment extends Fragment {
                 }
                 if(position == 2)
                 {
-                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.fragment_place, new CommunityFragment());
-                    fragmentTransaction.commit();
+                    Intent i = new Intent(getActivity(),Review.class);
+                    startActivity(i);
                 }
                 if (position == 4) {
                     SharedPreferences prefs = getActivity().getSharedPreferences("application", Context.MODE_PRIVATE);
