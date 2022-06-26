@@ -1,4 +1,6 @@
+# DARI
 
+DARI stands for Depth Augmented Reality Interior. It is conducted by Android Studio with the language, Java. 
 
 # Key Functions
 
@@ -7,6 +9,10 @@ Using ARCore's Depth API among Google APIs, you can determine which object is cl
 - Can place/delete/rotate/move object or place multiple objects.
 - Login/Logout
 - Share the experience through community
+
+# DARI Demo Video
+
+[![Watch the video](https://user-images.githubusercontent.com/64020092/99770311-fc930580-2b4a-11eb-9efe-bf692e6541bb.jpeg)](https://www.youtube.com/watch?v=qpOKgAsk5Tw&feature=youtu.be)
 
 # Experiment Environment
 
@@ -30,8 +36,26 @@ implementation 'jp.wasabeef:glide-transformations:4.0.0'
 
 implementation 'com.github.bumptech.glide:glide:4.11.0'
 # Developer
-Syed Rameez Haider
-rameeznaqvi9@gmail.com
+Kim Dong-Jae
+kdjm1ru@naver.com
+Gachon Univ
 
-Haider Zaman
-chhaider10954@gmail.com
+Bae Tae-Won
+gerrard1283@naver.com
+Gachon Univ
+
+Kim Kyu-Yeon
+sally6251@naver.com
+Gachon Univ
+
+Song Yu-Jin
+j_jongleur@naver.com
+Gachon Univ
+
+# API
+
+https://github.com/KimKyuyeon/AR_Object_placment
+
+# PPT link
+
+https://drive.google.com/file/d/1bZbGP4j17oFiM-hbjCbbTrQTFIt1Tp-H/view?usp=sharing
