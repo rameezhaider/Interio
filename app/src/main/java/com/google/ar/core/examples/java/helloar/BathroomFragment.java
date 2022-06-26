@@ -119,7 +119,27 @@ public class BathroomFragment extends Fragment {
             }
         });
         chair4 = (ImageButton) v.findViewById(R.id.chair4);
-        chair4.setOnClickListener(new View.OnClickListener() {
+        chair4.setOnClickListener(view -> {
+            if (cnt == 0) {
+                obj_file = "models/chair4.obj";
+                png_file = "models/table_texture5.png";
+                size_height=0.6;
+                size_width=1.5;
+                isObjectReplaced = true;
+            }
+        });
+        chair5 = (ImageButton) v.findViewById(R.id.chair5);
+        chair5.setOnClickListener(view -> {
+            if (cnt == 0) {
+                obj_file = "models/chair4.obj";
+                png_file = "models/table_texture5.png";
+                size_height=0.6;
+                size_width=1.5;
+                isObjectReplaced = true;
+            }
+        });
+        chair6 = (ImageButton) v.findViewById(R.id.chair6);
+        chair6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (cnt == 0) {

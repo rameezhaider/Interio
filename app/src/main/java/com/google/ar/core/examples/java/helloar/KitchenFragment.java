@@ -33,6 +33,10 @@ public class KitchenFragment extends Fragment {
 
     private ImageButton desk1;
     private ImageButton desk2;
+    private ImageButton desk3;
+    private ImageButton desk4;
+    private ImageButton desk5;
+    private ImageButton desk6;
     private ImageButton back_button_Kitchen;
     public KitchenFragment() {
         // Required empty public constructor
@@ -107,7 +111,58 @@ public class KitchenFragment extends Fragment {
                 }
             }
         });
-
+        desk3 = (ImageButton) v.findViewById(R.id.desk3);
+        desk3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (cnt == 0) {
+                    obj_file = "models/desk2.obj";
+                    png_file = "models/table_texture5.png";
+                    size_height=2;
+                    size_width=1.25;
+                    isObjectReplaced = true;
+                }
+            }
+        });
+        desk4 = (ImageButton) v.findViewById(R.id.desk4);
+        desk4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (cnt == 0) {
+                    obj_file = "models/desk2.obj";
+                    png_file = "models/table_texture5.png";
+                    size_height=2;
+                    size_width=1.25;
+                    isObjectReplaced = true;
+                }
+            }
+        });
+        desk5 = (ImageButton) v.findViewById(R.id.desk5);
+        desk5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (cnt == 0) {
+                    obj_file = "models/desk2.obj";
+                    png_file = "models/table_texture5.png";
+                    size_height=2;
+                    size_width=1.25;
+                    isObjectReplaced = true;
+                }
+            }
+        });
+        desk6 = (ImageButton) v.findViewById(R.id.desk6);
+        desk6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (cnt == 0) {
+                    obj_file = "models/desk2.obj";
+                    png_file = "models/table_texture5.png";
+                    size_height=2;
+                    size_width=1.25;
+                    isObjectReplaced = true;
+                }
+            }
+        });
         return v;
     }
 }

@@ -191,7 +191,7 @@ public class SidemenuFragment extends Fragment {
         listview.setAdapter(adapter);
 
         // My page
-        adapter.addItem(ContextCompat.getDrawable(v.getContext(), R.drawable.menu_mypage2), "My page") ;
+        adapter.addItem(ContextCompat.getDrawable(v.getContext(), R.drawable.menu_mypage2), "Multiple Objects") ;
         // Wishlist
         adapter.addItem(ContextCompat.getDrawable(v.getContext(), R.drawable.menu_like2), "Wishlist") ;
         // Share
@@ -206,6 +206,10 @@ public class SidemenuFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                if(position == 0){
+                    Intent i = new Intent(getActivity(),MultipleObjects.class);
+                    startActivity(i);
+                }
                 if(position == 1)
                 {
                     Intent i = new Intent(getActivity(),upload.class);

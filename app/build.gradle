@@ -92,3 +92,39 @@ sceneform.asset('sampledata/cubito3.fbx',
         'default',
         'sampledata/cubito3.sfa',
         'src/main/res/raw/cubito3')
+
+
+sceneform.asset('sampleData/model.obj',
+        'default',
+        'sampleData/model.sfa',
+        'src/main/assets/model')
+
+sceneform.asset('sampleData/table.obj',
+        'default',
+        'sampleData/table.sfa',
+        'src/main/assets/table')
+
+sceneform.asset('sampleData/chair.obj',
+        'default',
+        'sampleData/chair.sfa',
+        'src/main/assets/chair')
+
+sceneform.asset('sampleData/lamp.obj',
+        'default',
+        'sampleData/lamp.sfa',
+        'src/main/assets/lamp')
+
+sceneform.asset('sampleData/tv.obj',
+        'default',
+        'sampleData/tv.sfa',
+        'src/main/assets/tv')
+
+sceneform.asset('sampleData/cloth.obj',
+        'default',
+        'sampleData/cloth.sfa',
+        'src/main/assets/cloth')
+
+sceneform.asset('sampleData/room.obj',
+        'default',
+        'sampleData/room.sfa',
+        'src/main/assets/room')
