@@ -6,7 +6,7 @@ public class Feedback {
         public Feedback(){
 
         }
-        public String getReview(String s)
+        public String getReview()
         {
                 return Review;
         }

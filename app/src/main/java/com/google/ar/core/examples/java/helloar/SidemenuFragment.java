@@ -40,12 +40,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SidemenuFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class SidemenuFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -122,37 +116,6 @@ public class SidemenuFragment extends Fragment {
             user_name.setText(name);
             user_email.setText(email);
             user_name.setText(firebaseUser.getDisplayName());
-
-//            for (UserInfo profile : firebaseUser.getProviderData()) {
-//                // Id of the provider (ex: google.com)
-//                String providerId = profile.getProviderId();
-//
-//                // UID specific to the provider
-//                String uid = profile.getUid();
-//
-//                // Name, email address, and profile photo Url
-//                String email = profile.getEmail();
-//
-//
-//                DatabaseReference Db=FirebaseDatabase.getInstance().getReference();
-//                DatabaseReference Users = Db.child("Users").child(uid).child("name");
-//                Users.addListenerForSingleValueEvent(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                        name = snapshot.getValue().toString();
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError error) {
-//
-//                    }
-//                });
-//
-//                user_name.setText(name);
-//                user_email.setText(email);
-//            }
-
-
 
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
