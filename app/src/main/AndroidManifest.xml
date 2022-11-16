@@ -1,67 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.google.ar.core.examples.java.helloar">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.google.ar.core.examples.java.helloar">
 
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
     <!--
  Limits app visibility in the Google Play Store to ARCore supported devices
        (https://developers.google.com/ar/discover/supported-devices).
     -->
     <uses-feature
-            android:name="android.hardware.camera.ar"
-            android:required="true"/>
+        android:name="android.hardware.camera.ar"
+        android:required="true" />
     <uses-feature
-            android:glEsVersion="0x00020000"
-            android:required="true"/>
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-            android:allowBackup="true"
-            android:icon="@drawable/ic_launcher"
-            android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:supportsRtl="true"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:usesCleartextTraffic="false"
-            tools:ignore="GoogleAppIndexingWarning">
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar"
+        android:usesCleartextTraffic="false"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
-                android:name=".Review"
-                android:exported="true"/>
+            android:name=".CardViewActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
-                android:name=".upload"
-                android:exported="true"/>
+            android:name=".Review"
+            android:exported="true" />
         <activity
-                android:name=".MultipleObjects"
-                android:exported="true"/>
+            android:name=".upload"
+            android:exported="true" />
         <activity
-                android:name=".Dimensions"
-                android:exported="true"/>
+            android:name=".MultipleObjects"
+            android:exported="true" />
         <activity
-                android:name=".SplashActivity"
-                android:screenOrientation="portrait"
-                android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-                tools:ignore="LockedOrientationActivity">
+            android:name=".Dimensions"
+            android:exported="true" />
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"/>
-        <activity android:name=".SignUpActivity"/>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SignUpActivity" />
         <activity
-                android:name=".MainActivity"
-                android:configChanges="orientation|screenSize"
-                android:exported="true"
-                android:screenOrientation="locked"
-                android:theme="@style/Theme.AppCompat.NoActionBar">
-        </activity> <!-- Indicates whether "Google Play Services for AR" (ARCore) is "required" or "optional". -->
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="locked"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity> <!-- Indicates whether "Google Play Services for AR" (ARCore) is "required" or "optional". -->
         <meta-data
-                android:name="com.google.ar.core"
-                android:value="required"/>
+            android:name="com.google.ar.core"
+            android:value="required" />
     </application>
 
 </manifest>

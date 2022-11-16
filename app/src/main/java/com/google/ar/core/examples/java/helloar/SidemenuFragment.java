@@ -159,8 +159,9 @@ public class SidemenuFragment extends Fragment {
         adapter.addItem(ContextCompat.getDrawable(v.getContext(), R.drawable.menu_like2), "Wishlist") ;
         // Share
         adapter.addItem(ContextCompat.getDrawable(v.getContext(), R.drawable.menu_share2), "Reviews") ;
+//        adapter.addItem(ContextCompat.getDrawable(v.getContext(), R.drawable.designer), "Shops and Designers") ;
         // Share
-        adapter.addItem(ContextCompat.getDrawable(v.getContext(), R.drawable.menu_setting2), "Setting") ;
+        adapter.addItem(ContextCompat.getDrawable(v.getContext(), R.drawable.menu_setting2), "Shops and Designers") ;
         // Share
         adapter.addItem(ContextCompat.getDrawable(v.getContext(), R.drawable.menu_logout2), "Logout") ;
 
@@ -184,6 +185,11 @@ public class SidemenuFragment extends Fragment {
                 if(position == 2)
                 {
                     Intent i = new Intent(getActivity(),Review.class);
+                    startActivity(i);
+                }
+                if(position == 3)
+                {
+                    Intent i = new Intent(getActivity(),CardViewActivity.class);
                     startActivity(i);
                 }
                 if (position == 4) {
