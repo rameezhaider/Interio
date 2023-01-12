@@ -55,10 +55,12 @@ public class CardViewActivity extends AppCompatActivity {
 //                    "Secondary " + index);
 //            results.add(index, obj);
 //        }
-        DataObject obj=new DataObject("Malik Sons","Haider Ali","03316837883");
+        DataObject obj=new DataObject("Alfa Designer","alfadesigner.com","Haider Ali","Lahore","03316837883",R.drawable.designer);
         results.add(0, obj);
-        DataObject obj1=new DataObject("Malik Sons","Haider Ali","05578382");
+        DataObject obj1=new DataObject("Interior Architects","interiorarchitects.com","Ahmad Khan","Karachi","03316837883",R.drawable.art);
         results.add(1, obj1);
+        DataObject obj2=new DataObject("The Interior","theinterior.com","Huzaifa Khalid","Lahore","03018477839",R.drawable.interior);
+        results.add(2, obj2);
         return results;
     }
 }

@@ -14,7 +14,7 @@
    limitations under the License.
 -->
 <resources>
-    <string name="app_name" translatable="false">Interio</string>
+    <string name="app_name" translatable="false">Designers.</string>
     <string name="depth_use_explanation" translatable="false">When Depth is enabled on supported devices, virtual
         objects adapt to the environment by blending in with the real world.
     </string>

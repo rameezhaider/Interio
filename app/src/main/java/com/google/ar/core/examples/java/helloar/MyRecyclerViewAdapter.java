@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.ar.core.examples.java.helloar.DataObject;
@@ -22,14 +23,19 @@ public class MyRecyclerViewAdapter extends RecyclerView
             implements View
             .OnClickListener {
         TextView label;
+        TextView web;
         TextView dateTime;
         TextView contact;
-
+        TextView location;
+        ImageView imageViewIcon;
         public DataObjectHolder(View itemView) {
             super(itemView);
             label = (TextView) itemView.findViewById(R.id.textView);
             dateTime = (TextView) itemView.findViewById(R.id.textView2);
             contact = (TextView) itemView.findViewById(R.id.textView1);
+            location = (TextView) itemView.findViewById(R.id.textView3);
+            web = (TextView) itemView.findViewById(R.id.textView4);
+            imageViewIcon=(ImageView) itemView.findViewById(R.id.imageView);
             Log.i(LOG_TAG, "Adding Listener");
             itemView.setOnClickListener(this);
         }
@@ -63,6 +69,9 @@ public class MyRecyclerViewAdapter extends RecyclerView
         holder.label.setText(mDataset.get(position).getmText1());
         holder.dateTime.setText(mDataset.get(position).getmText2());
         holder.contact.setText(mDataset.get(position).getmText3());
+        holder.location.setText(mDataset.get(position).getmText4());
+        holder.web.setText(mDataset.get(position).getmText5());
+        holder.imageViewIcon.setImageResource(mDataset.get(position).getmImage1());
     }
 
     public void addItem(DataObject dataObj, int index) {
